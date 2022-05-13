@@ -6,6 +6,7 @@
     <meta http-equiv="Xt="width=device-width, initial-scale=1.0">
     <title>Simba</title>
     <link rel="stylesheet" href="styles.css">
+    <script src='jquery-3.6.0.min.js'></script>
 </head>
 <body>
     <h1>Cat</h1>
@@ -17,7 +18,43 @@
     <img src="assets/cat.jpg" alt="">
 
     <!-- <a href="https://google.com">Hier Klicken</a> -->
+<br><br>
+<br><br>
+<br><br>
+    <div class="container">
+        <div class="left">
+            <h3 id="left-title">In Progress</h3>
 
+            <div id="item">
+                <input type="text">
+                <strong onclick="done()">✓</strong>
+            </div>
+        </div>
+
+        <div class="right">
+            <h3 id="right-title">Done</h3>
+
+            <div id="item">
+                <input type="text" disabled>
+                <strong onclick="undo()">X</strong>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function done () {
+            $('#item').insertAfter('#right-title');
+            $('#item input').prop( "disabled", true );
+            $('#item strong').text("X");
+        }
+        
+        function undo () {
+            $('div').insertAfter('#left-title');
+            $('#item input').prop( "disabled", false );
+            $('#item strong').text("✓");
+        }
+    </script>
 
 </body>
 </html>

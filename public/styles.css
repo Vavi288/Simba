@@ -2,3 +2,21 @@ body {
     background-color: #00eeff;
     font-family: 'Calibri Light';
 }
+strong {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+strong:hover {
+    color: white;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.left, .right {
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.left {
+    border-right: solid 2px black;
+}
